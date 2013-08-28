@@ -2,8 +2,8 @@
 /*
  * GET home page.
  */
-var ArticleProvider = require('../articleprovider-memory').ArticleProvider;
-var articleProvider= new ArticleProvider();
+var ArticleProvider = require('../model/article').ArticleProvider;
+var articleProvider= new ArticleProvider( 'localhost', 27017 );
 exports.index = function(req, res){
   articleProvider.findAll( function( error, docs ){
     res.render( 'index.jade', {

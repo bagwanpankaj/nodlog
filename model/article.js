@@ -6,7 +6,7 @@ var BSON = mongodb.BSON;
 var ObjectID = mongodb.ObjectID;
 ArticleProvider = function( host, port ){
   this.db = new Db( "node_mongo_blog", new Server(host, port, {auto_reconnect: true}, {}));
-  this.db.open(function(){}); )
+  this.db.open(function(){})
 };
 ArticleProvider.prototype.getCollection = function( callback ){
   this.db.collection( 'articles', function( error, article_collection ){
