@@ -31,6 +31,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/posts/new', routes.new);
 app.post('/posts', routes.create);
+app.get('/posts/:id', routes.show);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

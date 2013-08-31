@@ -23,3 +23,11 @@ exports.create = function( req, res ){
     res.redirect("/")
   });
 }
+exports.show = function( req, res ){
+  articleProvider.findById( req.params.id, function( error, doc ){
+    res.render( 'show.jade', {
+      title: doc.title,
+      article: doc
+    })
+  } );
+};
